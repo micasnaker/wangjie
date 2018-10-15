@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+</head>
+<script>
+    function jisuan(){
+        //获取第一个input对象的value值
+        var obj1=document.getElementById("text1").value;
+        //获取第二个input对象的value值
+        var obj2=document.getElementById("text2").value;
+        //获取符号的value值
+        var fh=document.getElementById("fuhao").value;
+        //获取第三个input对象
+        var obj3=document.getElementById("text3");
+        obj1=parseInt(obj1);
+        obj2=parseInt(obj2);
+        //var jieguo=obj1+obj2;
+        if(fh=="+"){
+            var jieguo=obj1+obj2;
+        }else if(fh=="-"){
+            var jieguo=obj1-obj2;
+        }else if(fh=="*"){
+            var jieguo=obj1*obj2;
+        }else{
+            var jieguo=obj1/obj2;
+        }
+        obj3.value=jieguo;
+    }
+</script>
+<body>
+    <input type="text" id="text1">
+    <select id="fuhao">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="text2">
+    =
+    <input type="text" id="text3">
+    <input type="button" value="点击计算" onclick="jisuan()">
+</body>
+</html>
